@@ -15,9 +15,11 @@ namespace CSharpLearning
                 { 3, new Exercise3() },
                 { 4, new Exercise4() },
                 { 5, new Exercise5() },
+                { 6, new Exercise6() },
             };
             while (true)
             {
+                Exercise1 ex = new();
                 foreach (var exercise in exercises)
                 {
                     Console.WriteLine($"Enter {exercise.Key} to run => {exercise.Value.GetType().Name}.");

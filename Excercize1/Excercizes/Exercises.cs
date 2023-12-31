@@ -150,4 +150,35 @@ namespace CSharpLearning.Programs
 
         }
     }
+
+    class Exercise6 : IExercise
+    {
+        public void Run()
+        {
+            Console.WriteLine("Enter numbers seperated by hyphen Eg. 1-2-3-4-5-6-7");
+            string? userInput = Console.ReadLine();
+
+            if (string.IsNullOrWhiteSpace(userInput)) throw new Exception("String is empty");
+
+            string[] parsedString = userInput.Split("-");
+            if (parsedString.Length == 1) { Console.WriteLine("Consecutive"); return; }
+
+            for (int i = 1; i < parsedString.Length; i++)
+            {
+                if(int.Parse(parsedString[i]) < int.Parse(parsedString[i-1]))
+                {
+                    Console.WriteLine("Non Consecutive");
+                    return;
+                }
+            }
+
+
+            Console.WriteLine("Consecutive");
+
+
+
+
+
+        }
+    }
 }
